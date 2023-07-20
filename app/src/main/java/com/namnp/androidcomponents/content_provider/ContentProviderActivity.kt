@@ -47,8 +47,8 @@ class ContentProviderActivity : ComponentActivity() {
         val selectionArgs = arrayOf(millisYesterday.toString())
         contentResolver.query(
             MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-            projection,
-            selection,
+            projection, // fields to read
+            selection, // filter expected data
             selectionArgs,
             sortOrder,
         )?.use { cursor -> // use {} : similar to file, open cursor as a input stream, auto close when finish use {} block
